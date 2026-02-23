@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lumala Logistics - Online Transactions</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="content-page transactions-background">
+    <section class="page-header">
+      <h1>Online Transactions</h1>
+      <p class="page-subtitle">
+        Use the secure form below to request a pickup or delivery quotation.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <form
+        class="transaction-form"
+        action="#"
+        method="post"
+        onsubmit="return validateTransactionForm();"
+      >
+        <fieldset>
+          <legend>Customer Information</legend>
+          <label for="fullName">Full Name:</label>
+          <input type="text" id="fullName" name="fullName" required />
+
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" required />
+        </fieldset>
+
+        <fieldset>
+          <legend>Shipment Details</legend>
+          <label for="pickupLocation">Pickup Location:</label>
+          <input
+            type="text"
+            id="pickupLocation"
+            name="pickupLocation"
+            placeholder="City, Street, Building"
+            required
+          />
+
+          <label for="dropoffLocation">Drop‑off Location:</label>
+          <input
+            type="text"
+            id="dropoffLocation"
+            name="dropoffLocation"
+            placeholder="City, Street, Building"
+            required
+          />
+
+          <label for="packageType">Package Type:</label>
+          <select id="packageType" name="packageType">
+            <option value="documents">Documents</option>
+            <option value="parcel">Parcel (0 – 10kg)</option>
+            <option value="freight">Freight (10 – 100kg)</option>
+            <option value="container">Container</option>
+          </select>
+
+          <label for="serviceLevel">Service Level:</label>
+          <select id="serviceLevel" name="serviceLevel">
+            <option value="cityExpress">City Express (Same Day)</option>
+            <option value="standardRoad">Standard Road (2 – 3 Days)</option>
+            <option value="airPriority">Global Air Priority</option>
+            <option value="oceanSaver">Ocean Saver</option>
+          </select>
+
+          <label>Insurance Required:</label>
+          <div class="inline-options">
+            <label><input type="radio" name="insurance" value="yes" /> Yes</label>
+            <label><input type="radio" name="insurance" value="no" checked /> No</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Payment &amp; Confirmation</legend>
+          <label for="paymentMethod">Preferred Payment Method:</label>
+          <select id="paymentMethod" name="paymentMethod">
+            <option value="card">Credit / Debit Card</option>
+            <option value="mobile">Mobile Money</option>
+            <option value="bank">Bank Transfer</option>
+            <option value="cash">Cash on Delivery</option>
+          </select>
+
+          <label for="notes">Additional Notes:</label>
+          <textarea
+            id="notes"
+            name="notes"
+            rows="4"
+            placeholder="Any special instructions for handling or delivery..."
+          ></textarea>
+
+          <div class="inline-options">
+            <label
+              ><input type="checkbox" id="terms" name="terms" /> I agree to the
+              terms and conditions.</label
+            >
+          </div>
+        </fieldset>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">Submit Request</button>
+          <button type="reset" class="btn-secondary">Clear Form</button>
+        </div>
+      </form>
+
+      <p class="form-note">
+        After submitting, a customer care representative will contact you to
+        confirm the details and final cost of your transaction.
+      </p>
+    </section>
+
+    <script>
+      function validateTransactionForm() {
+        var name = document.getElementById("fullName").value.trim();
+        var email = document.getElementById("email").value.trim();
+        var terms = document.getElementById("terms").checked;
+
+        if (!name || !email) {
+          alert("Please fill in your full name and email address.");
+          return false;
+        }
+
+        if (!terms) {
+          alert("Please agree to the terms and conditions before submitting.");
+          return false;
+        }
+
+        alert(
+          "Thank you, " +
+            name +
+            "! Your transaction request has been received by Lumala Logistics."
+        );
+        return false; // prevent real submission for this demo project
+      }
+    </script>
+  </body>
+</html>
+

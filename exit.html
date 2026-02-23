@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lumala Logistics - Exit Page</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="content-page exit-background">
+    <section class="page-header">
+      <h1>Thank You for Visiting Lumala Logistics</h1>
+      <p class="page-subtitle">
+        We hope our services and recent advertisements have given you a clear
+        picture of how we can support your business.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <p>
+        You have reached the official <strong>Exit Page</strong> of the Lumala
+        Logistics website. From here you can safely close this browser window
+        or return to the entry page.
+      </p>
+      <p>
+        If you would like to request a shipment later, simply reopen the site
+        and use the <em>Online Transactions</em> form at any time.
+      </p>
+
+      <div class="exit-actions">
+        <a href="index.html" target="_top" class="btn-secondary"
+          >Back to Entry Page</a
+        >
+        <button type="button" class="btn-primary" onclick="attemptCloseWindow()">
+          Close This Window
+        </button>
+      </div>
+    </section>
+
+    <script>
+      function attemptCloseWindow() {
+        alert(
+          "You can now close this browser tab or window to fully exit the Lumala Logistics site."
+        );
+        window.close();
+      }
+    </script>
+  </body>
+</html>
+
